@@ -3,21 +3,30 @@
 </ion-header>
 
 <ion-content padding>
-  <h3>LOGIN</h3>
+  <h3>NOTÍCIAS</h3>
 
-  <ion-list>
-    <ion-item>
-      <ion-label stacked>Username</ion-label>
-      <ion-input type="text"></ion-input>
+ 
+
+  <ion-card *ngFor="let n of noticias">
+
+    <ion-item >
+      <ion-avatar item-start>
+        <img src="../../assets/imgs/{{n.imagem}}">
+      </ion-avatar>
+      <h2>{{n.nome}}</h2>
+      <p>{{n.data}}</p>
     </ion-item>
-    <ion-item>
+  
+    <img src="../../assets/imgs/{{n.imagem}}">
+  
+    <ion-card-content>
+      <p>Wait a minute. Wait a minute, Doc. Uhhh... Are you telling me that you built a time machine... out of a DeLorean?! Whoa. This is heavy.</p>
+    </ion-card-content>
+    <ion-card-content>
+      <button ion-button (click)="navNoticiaCompleta(n)">Saiba mais</button>
+    </ion-card-content>
 
-      <ion-label stacked>Password</ion-label>
-      <ion-input type="password"></ion-input>
-    </ion-item>
-  </ion-list>
-
-  <button ion-button block (click)="login()">ENTRAR</button>
-  <button ion-button block outline>REGISTRAR</button>
+  
+  </ion-card>
 
 </ion-content>

@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, IonicPage } from 'ionic-angular';
+import { Noticia } from '../../model/noticia';
+import { NOTICIAS } from '../../config/api.config';
 
 @IonicPage()
 @Component({
@@ -8,12 +10,14 @@ import { NavController, IonicPage } from 'ionic-angular';
 })
 export class HomePage {
 
+  noticias : Noticia[] = NOTICIAS;
+
   constructor(public navCtrl: NavController) {
 
   }
 
-  login(){
-    this.navCtrl.setRoot('CategoriasPage');
+  navNoticiaCompleta(noticia : Noticia){ 
+    this.navCtrl.push("NoticiaCompletaPage",{noticia : noticia});
   }
 
 

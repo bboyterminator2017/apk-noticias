@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
 import { Noticia } from '../../model/noticia';
+import { NOTICIAS, NOTICIASC } from '../../config/api.config';
 
-/**
- * Generated class for the NoticiaCompletaPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
 
 @IonicPage()
 @Component({
@@ -16,13 +11,11 @@ import { Noticia } from '../../model/noticia';
 })
 export class NoticiaCompletaPage {
 
-  noticia : Noticia;
+  noticia-completa : NoticiaCompleta[] = NOTICIASC;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
-  ionViewDidLoad() {
-    console.log('ionViewDidLoad NoticiaCompletaPage');
-  }
+  
 
 }
